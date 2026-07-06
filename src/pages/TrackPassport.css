@@ -1,0 +1,533 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.track-page {
+  min-height: 100vh;
+  background: #f4f7fc;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Hero / Search Section ===== */
+
+.track-hero {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #fff;
+  padding: 70px 20px 100px;
+  text-align: center;
+}
+
+.track-hero-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin: 0 auto 18px;
+}
+
+.track-hero h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.track-hero p {
+  color: #cbd5e1;
+  font-size: 15px;
+  margin-bottom: 32px;
+}
+
+.track-search-box {
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.track-search-box input {
+  flex: 1;
+  border: none;
+  padding: 16px 20px;
+  font-size: 15px;
+  outline: none;
+}
+
+.track-search-box button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  padding: 0 30px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.track-search-box button:hover {
+  background: #1d4ed8;
+}
+
+.track-search-box button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ===== Result Section ===== */
+
+.track-result-wrap {
+  max-width: 800px;
+  margin: -55px auto 60px;
+  padding: 0 20px;
+  flex: 1;
+  width: 100%;
+}
+
+.track-error {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.track-loading {
+  text-align: center;
+  color: #64748b;
+  margin-top: 30px;
+}
+
+.track-empty {
+  text-align: center;
+  color: #94a3b8;
+  margin-top: 30px;
+}
+
+.track-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.track-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  border-bottom: 1px solid #eef2f7;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+.track-summary h2 {
+  font-size: 20px;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.track-app-id {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.track-status-badge {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.st-green { background: #dcfce7; color: #16a34a; }
+.st-orange { background: #fef3c7; color: #b45309; }
+.st-red { background: #fee2e2; color: #dc2626; }
+
+/* ===== View / Download PDF buttons (summary form PDF) ===== */
+
+.pdf-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pdf-btn-view {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.pdf-btn-view:hover {
+  background: #dbeafe;
+}
+
+.pdf-btn-download {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.pdf-btn-download:hover {
+  background: #1d4ed8;
+}
+
+/* ===== Tabs (Personal | Passport | Employment | Visa | Documents | Progress) ===== */
+
+.tab-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 22px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #475569;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: #f1f5f9;
+}
+
+.tab-btn-active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+.tab-icon {
+  font-size: 14px;
+}
+
+.tab-content {
+  animation: tab-fade-in 0.2s ease;
+  margin-bottom: 6px;
+}
+
+@keyframes tab-fade-in {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Progress Tab: vertical checklist (video jaisa) ===== */
+
+.progress-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress-row {
+  display: flex;
+  gap: 14px;
+}
+
+.progress-rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+}
+
+.progress-dot-done {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.progress-dot-current {
+  background: #fff;
+  color: #2563eb;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  animation: progress-pulse 1.6s infinite;
+}
+
+.progress-dot-pending {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.progress-dot-rejected {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+@keyframes progress-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.35); }
+  70% { box-shadow: 0 0 0 8px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+.progress-connector {
+  width: 3px;
+  flex: 1;
+  min-height: 28px;
+  background: #e2e8f0;
+  border-radius: 2px;
+}
+
+.progress-connector-done {
+  background: #16a34a;
+}
+
+.progress-info {
+  padding-bottom: 26px;
+}
+
+.progress-info strong {
+  display: block;
+  font-size: 14.5px;
+  color: #0f172a;
+  margin-bottom: 2px;
+}
+
+.progress-label-current {
+  color: #2563eb;
+}
+
+.progress-date {
+  font-size: 12.5px;
+  color: #94a3b8;
+}
+
+.progress-remark {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.track-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.track-label {
+  font-size: 12px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.track-value {
+  font-size: 14px;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.track-remark {
+  background: #f8fafc;
+  border-left: 3px solid #2563eb;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #334155;
+}
+
+/* ===== Documents Tab (uploaded files: visa, contract, approval, aadhaar, pan etc.) ===== */
+
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.document-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f8fafc;
+  transition: box-shadow 0.2s ease;
+}
+
+.document-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.document-preview {
+  width: 100%;
+  height: 90px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.document-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.document-file-icon {
+  font-size: 32px;
+}
+
+.document-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.document-actions {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.doc-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 7px 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.doc-btn-view {
+  background: #eff6ff;
+  color: #2563eb;
+  border-color: #bfdbfe;
+}
+
+.doc-btn-view:hover {
+  background: #dbeafe;
+}
+
+.doc-btn-download {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.doc-btn-download:hover {
+  background: #1d4ed8;
+}
+
+.documents-empty {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
+  padding: 20px 0;
+}
+
+/* ===== Footer ===== */
+
+.track-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 640px) {
+  .track-search-box {
+    flex-direction: column;
+    border-radius: 14px;
+  }
+  .track-search-box button {
+    padding: 14px;
+  }
+  .track-grid {
+    grid-template-columns: 1fr;
+  }
+  .track-hero h1 {
+    font-size: 24px;
+  }
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 12.5px;
+  }
+  .documents-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.track-back-btn {
+  background: none;
+  border: none;
+  color: #065f46;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}

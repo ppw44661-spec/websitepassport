@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// import TrackPassport from "./pages/TrackPassport";
+// import "./App.css";
+
+// function App() {
+//   return <TrackPassport />;
+// }
+
+// export default App;
+
+import { useState } from "react";
+import Home from "./pages/home";
+import TrackPassport from "./pages/TrackPassport";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // "home" = BCG-style landing page, "track" = Track Passport page
+  const [page, setPage] = useState("home");
+
+  if (page === "track") {
+    return <TrackPassport onBack={() => setPage("home")} />;
+  }
+
+  return <Home onTrackClick={() => setPage("track")} />;
 }
 
 export default App;
